@@ -7,11 +7,18 @@ export interface Data {
   [key: string]: string;
 }
 
-export type FilterOptions = "None" | "Male" | "Female" | "Sent" | "Unsent";
+export enum FilterOptions { 
+  NONE = "None",
+  MALE = "Male",
+  FEMALE = "Female",
+  SENT = "Sent",
+  UNSENT = "Unsent"
+}
+
 
 function App() {
   const [data, setData] = useState<Data[]>([]);
-  const [filter, setFilter] = useState<FilterOptions>("None");
+  const [filter, setFilter] = useState<FilterOptions>(FilterOptions.NONE);
 
   function fetchData() {
     fetch("https://testsheets-agcpprbymq-ew.a.run.app/profiles")
@@ -41,7 +48,7 @@ function App() {
         <FilterBtn active={filter} name={"Sent"} setFilter={setFilter} />
         <FilterBtn active={filter} name={"Unsent"} setFilter={setFilter} />
       </div>
-      <div className="flex flex-wrap gap-6 row-start-3 justify-center lg:justify-start col-start-1 lg:col-start-2 col-span-full w-full items-start">
+      <div className="flex flex-wrap gap-6 row-start-3 row-span-3 justify-center lg:justify-start col-start-1 lg:col-start-2 col-span-full w-full items-start">
         <Profiles profiles={data} filter={filter} />
       </div>
     </div>

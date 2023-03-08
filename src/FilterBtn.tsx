@@ -1,9 +1,9 @@
 import { FilterOptions } from "./App";
+
 interface Props {
   name: string;
   active: string;
   setFilter: React.Dispatch<React.SetStateAction<FilterOptions>>;
-
 }
 
 const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
@@ -11,19 +11,19 @@ const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
     const { id } = e.target as HTMLButtonElement;
     switch (id) {
       case "All":
-        setFilter("None");
+        setFilter(FilterOptions.NONE);
         break;
       case "Male":
-        setFilter("Male");
+        setFilter(FilterOptions.MALE);
         break;
       case "Female":
-        setFilter("Female");
+        setFilter(FilterOptions.FEMALE);
         break;
       case "Sent":
-        setFilter("Sent");
+        setFilter(FilterOptions.SENT);
         break;
       case "Unsent":
-        setFilter("Unsent");
+        setFilter(FilterOptions.UNSENT);
     }
   }
   console.log(active)
@@ -32,7 +32,7 @@ const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
   return (
     <button
       className={`p-2 border-[1px] text-xs lg:text-lg border-black dark:border-white ${
-        active === name ? "bg-black dark:bg-white dark:text-black" : "bg-inherit"
+        active === name ? "bg-black text-white dark:bg-white dark:text-black" : "bg-inherit"
       } self-center w-full`}
       onClick={(e) => filterProfiles(e)}
       id={name}

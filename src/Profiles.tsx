@@ -40,7 +40,7 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
     <div className="flex flex-col gap-3 text-center" key={index}>
       <span>Unique Number:{profile["Unique_Number"]}</span>
       <button
-        className="p-2 border-[1px] dark:border-white"
+        className="p-2 border-[1px] border-black shadow-md dark:border-white"
         onClick={() => {
           copyBio(profile);
           setTimeout(() => {
