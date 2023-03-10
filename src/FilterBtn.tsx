@@ -2,8 +2,8 @@ import { FilterOptions } from "./App";
 
 interface Props {
   name: string;
-  active: string;
-  setFilter: React.Dispatch<React.SetStateAction<FilterOptions>>;
+  active: string | null;
+  setFilter: (e: string) => void
 }
 
 const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
@@ -11,23 +11,22 @@ const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
     const { id } = e.target as HTMLButtonElement;
     switch (id) {
       case "All":
-        setFilter(FilterOptions.NONE);
+        setFilter("");
         break;
       case "Male":
-        setFilter(FilterOptions.MALE);
+        setFilter(`type=${FilterOptions.MALE}`);
         break;
       case "Female":
-        setFilter(FilterOptions.FEMALE);
+        setFilter(`type=${FilterOptions.FEMALE}`);
         break;
       case "Sent":
-        setFilter(FilterOptions.SENT);
+        setFilter(`type=${FilterOptions.SENT}`);
         break;
       case "Unsent":
-        setFilter(FilterOptions.UNSENT);
+        setFilter(`type=${FilterOptions.UNSENT}`);
     }
   }
-  console.log(active)
-  console.log(name)
+ 
 
   return (
     <button
