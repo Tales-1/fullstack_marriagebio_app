@@ -24,7 +24,7 @@ function App() {
   let type = searchParams.get("type")
 
   function fetchData() {
-    fetch("http://127.0.0.1:8080/profiles")
+    fetch("https://testsheets-agcpprbymq-ew.a.run.app/profiles")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
