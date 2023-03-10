@@ -3,7 +3,7 @@ import copyBio from "./utils";
 
 interface Props {
     profiles:Data[]
-    filter:string
+    filter:string | null
 }
 
 interface ProfileProps { 
@@ -14,7 +14,7 @@ interface ProfileProps {
 
 const Profiles: React.FC<Props> = ({profiles, filter}) => {
   let filteredProfiles = profiles.filter((profile) => {
-    if(filter === "None") return profile
+    if(!filter) return profile
     if(filter === "Sent") return profile["Sent"] === "yes"
     if(filter === "Unsent") return profile["Sent"] === "no"
     return filter === profile["Gender"]
@@ -26,7 +26,7 @@ const Profiles: React.FC<Props> = ({profiles, filter}) => {
         ) : (
           filteredProfiles.map((profile, index) => {
             return(
-              <Profile profile={profile} index={index} />
+              <Profile profile={profile} index={index} key={index} />
             )
           })
         )}
