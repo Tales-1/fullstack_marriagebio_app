@@ -51,7 +51,7 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
           ;
         }}
       >
-        {profile["Height"]}
+        {profile["Gender"]}
       </button>
       {profile["Sent"] == "yes" ? (
         <span className="green">Sent</span>

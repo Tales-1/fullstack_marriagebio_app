@@ -19,6 +19,7 @@ export default function copyBio(profile:Data) {
 
 *Languages Spoken:* ${profile["Languages_spoken:_"]}
 *I celebrate:* ${profile["Do_you_celebrate_any_of_the_following?"]}
+*Do you have a beard?* ${profile["Do_you_have_a_beard?_(Male)"]}
 *Do you wear a hijab?* ${profile["Do_you_wear_any_of_the_following?"]}
 
 *About myself:* ${profile["About_Me:_Please_provide_a_description_of_yourself,_including_your_personal_qualities,_faith,_personality,_interests,_and_background?"]}
@@ -37,7 +38,7 @@ export default function copyBio(profile:Data) {
 
 *Contact:* ${profile["Who_to_contact?"]}
 *Contact Name:* ${profile["Parent_or_Guardian's_Name_"]}
-*Contact Number:* 0${profile["Please_provide_the_contact_details_of_a_parent_or_suitable_senior_guardian_(unless_in_exceptional_circumstances)_to_be_added_to_the_WhatsApp_group._Only_female_relative_will_be_added_to_the_group."]}`;
+*Contact Number:* 0${profile["Please_provide_the_contact_details_of_a_parent_or_suitable_senior_guardian_(unless_in_exceptional_circumstances)_to_be_added_to_the_WhatsApp_group._Only_female_relatives_will_be_added_to_the_group."]}`;
     navigator.clipboard.writeText(text);
     
   }
