@@ -15,20 +15,21 @@ interface ProfileProps {
 const Profiles: React.FC<Props> = ({profiles, filter}) => {
   let filteredProfiles = profiles.filter((profile) => {
     if(!filter) return profile
-    if(filter === "Sent") return profile["Sent"] === "yes"
-    if(filter === "Unsent") return profile["Sent"] === "no"
+    if(filter === "Sent") return profile["Sent"].toLowerCase()  === "yes"
+    if(filter === "Unsent") return profile["Sent"].toLowerCase() === "no"
     return filter === profile["Gender"]
   })
+  
     return (
       <>
         {!profiles.length ? (
           <p>Loading...</p>
         ) : (
-          filteredProfiles.map((profile, index) => {
+          !filteredProfiles.length ?  filteredProfiles.map((profile, index) => {
             return(
               <Profile profile={profile} index={index} key={index} />
-            )
-          })
+            )  
+          }) :<h1>No profiles match the filter.</h1>
         )}
       </>
       )
