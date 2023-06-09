@@ -40,7 +40,7 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
 
   return (
     <div className="flex flex-col gap-3 text-center" key={index}>
-      <span>Unique Number:{profile["Unique_Number"]}</span>
+      <span>{profile["Unique_Number"]}</span>
       <button
         className="p-2 border-[1px] border-black shadow-md dark:border-white"
         onClick={() => {
