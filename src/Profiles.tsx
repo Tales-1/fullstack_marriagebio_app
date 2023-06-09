@@ -36,6 +36,8 @@ const Profiles: React.FC<Props> = ({profiles, filter}) => {
 
 
 const Profile:React.FC<ProfileProps> = ({profile, index}) => {
+
+  console.log(profile)
   return (
     <div className="flex flex-col gap-3 text-center" key={index}>
       <span>Unique Number:{profile["Unique_Number"]}</span>
@@ -49,7 +51,7 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
           ;
         }}
       >
-        {profile["Gender"]}
+        {profile["Height"]}
       </button>
       {profile["Sent"] == "yes" ? (
         <span className="green">Sent</span>
