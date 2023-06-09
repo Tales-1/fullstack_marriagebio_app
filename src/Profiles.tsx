@@ -25,7 +25,7 @@ const Profiles: React.FC<Props> = ({profiles, filter}) => {
         {!profiles.length ? (
           <p>Loading...</p>
         ) : (
-          !filteredProfiles.length ?  filteredProfiles.map((profile, index) => {
+          filteredProfiles.length > 0 ?  filteredProfiles.map((profile, index) => {
             return(
               <Profile profile={profile} index={index} key={index} />
             )  
