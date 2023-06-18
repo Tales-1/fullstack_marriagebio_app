@@ -55,12 +55,12 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
         {profile["Gender"]}
       </button>
 
-      <Link to={`/profilepage/${profile["Unique_Number"]}`} className="text-xs underline hover:opacity-70">View Profile</Link>
+      <Link to={`/profilepage/${profile["Unique_Number"]}`} className="underline hover:opacity-70 text-xs xl:text-[0.82rem]">View Profile</Link>
 
       {profile["Sent"].toLowerCase() == "yes" ? (
-        <span className="green">Sent</span>
+        <span className="green text-sm">Sent</span>
       ) : (
-        <span className="red">Unsent</span>
+        <span className="red text-sm">Unsent</span>
       )}
     </div>
 

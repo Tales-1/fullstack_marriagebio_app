@@ -12,7 +12,9 @@ const ProfilePage = ({ profileData }: any) => {
   }
   return (
     <div>
-      <Link to="/" className="text-sm underline hover:opacity-70">&lt;--- Back to Profiles</Link><br/><br/>
+      <Link to="/" className="text-sm hover:opacity-70">&lt;--- 
+      <span className="underline">Back to Profiles</span></Link>
+      <br/><br/>
       <div>
         <h1 className="text-lg">{currentProfile["Unique_Number"]}</h1><br/>
         <span className="underline">Gender:</span> {currentProfile["Gender"]}<br/>
