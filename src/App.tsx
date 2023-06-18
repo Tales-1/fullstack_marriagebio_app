@@ -30,7 +30,7 @@ function App() {
       .catch((err) => console.error);
   }
 
-  console.log(data)
+  console.log("changed")
   useEffect(() => {
     if (!data?.length) {
       fetchData();

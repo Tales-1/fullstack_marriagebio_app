@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import FilterBtn from "./FilterBtn";
 import Profiles from "./Profiles";
@@ -22,8 +21,11 @@ function HomePage({profileData}:any) {
   const [searchParams, setSearchParams] = useSearchParams()
   let type = searchParams.get("type")
  
+
   return (
-    <div className="App h-screen w-screen grid grid-rows-6 grid-cols-3 lg:grid-cols-6">
+    !profileData.length ? 
+    
+      <div className="App h-screen w-screen grid grid-rows-6 grid-cols-3 lg:grid-cols-6">
       <h1 className="row-start-1 row-span-2 col-start-1 col-span-full m-auto lg:text-5xl">
         Marriage profile Database
       </h1>
@@ -37,7 +39,7 @@ function HomePage({profileData}:any) {
       <div className="flex flex-wrap gap-6 row-start-3 row-span-3 justify-center lg:justify-start col-start-1 lg:col-start-2 col-span-full w-full items-start">
         <Profiles profiles={profileData} filter={type} />
       </div>
-    </div>
+    </div> : <div>Loading...</div>
   );
 }
 
