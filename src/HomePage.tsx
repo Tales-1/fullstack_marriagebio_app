@@ -37,7 +37,8 @@ function HomePage({profileData}:any) {
       <div className="flex flex-wrap gap-6 row-start-3 row-span-3 justify-center lg:justify-start col-start-1 lg:col-start-2 col-span-full w-full items-start">
         <Profiles profiles={profileData} filter={type} />
       </div>
-    </div> : <div>Loading...</div>
+    </div> : <div className="fixed h-screen w-screen text-center grid place-items-center">
+      <span>Loading...</span></div>
   );
 }
 

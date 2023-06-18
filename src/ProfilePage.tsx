@@ -12,7 +12,7 @@ const ProfilePage = ({ profileData }: any) => {
   }
   return (
     <div>
-      <Link to="/">Back to Profiles</Link>
+      <Link to="/" className="text-sm">Back to Profiles</Link><br/>
       <div>
         {currentProfile["Unique_Number"]}<br/><br/>
         Gender: {currentProfile["Gender"]}<br/>
@@ -47,13 +47,13 @@ const ProfilePage = ({ profileData }: any) => {
           currentProfile[
             "I_would_accept_a_person_who_is:_Divorced,_widowed,_has_children,_a_revert."
           ]
-        }
+        }<br/>
         What are you looking for in your future spouse?
         {
           currentProfile[
             "Please_provide_details_about_the_qualities_and_characteristics_you_seek_in_your_potential_spouse."
           ]
-        }
+        }<br/>
         Any comments:{currentProfile["Any_further_comments"]}<br/>
         Contact: {currentProfile["Who_to_contact?"]}<br/>
         Contact Name: {currentProfile["Parent_or_Guardian's_Name_"]}<br/>
