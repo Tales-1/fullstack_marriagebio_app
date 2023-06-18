@@ -12,53 +12,46 @@ const ProfilePage = ({ profileData }: any) => {
   }
   return (
     <div>
-      <Link to="/" className="text-sm">Back to Profiles</Link><br/>
+      <Link to="/" className="text-sm">&lt;&#33;&#45;&#45; Back to Profiles</Link><br/><br/>
       <div>
-        {currentProfile["Unique_Number"]}<br/><br/>
-        Gender: {currentProfile["Gender"]}<br/>
-        Age: {currentProfile["Age"]}<br/>
-        Height: {currentProfile["Height"]}<br/>
-        Status: {currentProfile["Status:_"]}<br/>
-        Ethnicity: {currentProfile["Ethnicity:_"]}<br/>
-        Location: {currentProfile["Location:_"]}<br/>
-        Education: {currentProfile["Education:"]}<br/>
-        Employment: {currentProfile["Employment:"]}<br/>
-        Willing to Relocate? {currentProfile["Willing_to_relocate:_"]}<br/>
-        Family/Siblings: {currentProfile["Family/_Siblings"]}<br/>
-        Languages Spoken: {currentProfile["Languages_spoken:_"]}<br/>
-        I celebrate: 
-        {currentProfile["Do_you_celebrate_any_of_the_following?"]}<br/>
-        Do you have a beard? {currentProfile["Do_you_have_a_beard?_(Male)"]}<br/>
-        Do you wear a hijab? 
-        {currentProfile["Do_you_wear_any_of_the_following?"]}<br/>
-        About myself: 
-        {
+        <h1 className="text-lg">{currentProfile["Unique_Number"]}</h1><br/><br/>
+        <span className="underline">Gender:</span> {currentProfile["Gender"]}<br/>
+        <span className="underline">Age:</span> {currentProfile["Age"]}<br/>
+        <span className="underline">Height:</span> {currentProfile["Height"]}<br/>
+        <span className="underline">Status:</span> {currentProfile["Status:_"]}<br/>
+        <span className="underline">Ethnicity:</span> {currentProfile["Ethnicity:_"]}<br/>
+        <span className="underline">Location:</span> {currentProfile["Location:_"]}<br/>
+        <span className="underline">Education:</span> {currentProfile["Education:"]}<br/>
+        <span className="underline">Employment:</span> {currentProfile["Employment:"]}<br/>
+        <span className="underline">Willing to Relocate?</span> {currentProfile["Willing_to_relocate:_"]}<br/>
+        <span className="underline">Family/Siblings:</span> {currentProfile["Family/_Siblings"]}<br/>
+        <span className="underline">Languages Spoken:</span>  {currentProfile["Languages_spoken:_"]}<br/>
+        <span className="underline">I celebrate:</span> {currentProfile["Do_you_celebrate_any_of_the_following?"]}<br/>
+        <span className="underline">Do you have a beard?</span> {currentProfile["Do_you_have_a_beard?_(Male)"]}<br/>
+        <span className="underline">Do you wear a hijab?</span> {currentProfile["Do_you_wear_any_of_the_following?"]}<br/>
+        <span className="underline">About myself:</span>  {
           currentProfile[
             "About_Me:_Please_provide_a_description_of_yourself,_including_your_personal_qualities,_faith,_personality,_interests,_and_background?"
           ]
         }<br/>
-        Age Preferred: {currentProfile["Age_range:"]}<br/>
-        Preferred Ethnicity: {currentProfile["Preferred_Ethnicity"]}<br/>
-        Deen Expectations: {currentProfile["Deen_expectations:"]}<br/>
-        Education/Career Expectations: 
-        {currentProfile["Education/_career_expectations:"]}<br/>
-        I would accept a person who is: 
-        {
+        <span className="underline">Age Preferred:</span> {currentProfile["Age_range:"]}<br/>
+        <span className="underline">Preferred Ethnicity:</span> {currentProfile["Preferred_Ethnicity"]}<br/>
+        <span className="underline">Deen Expectations:</span> {currentProfile["Deen_expectations:"]}<br/>
+        <span className="underline">Education/Career Expectations:</span> {currentProfile["Education/_career_expectations:"]}<br/>
+        <span className="underline">I would accept a person who is:</span>  {
           currentProfile[
             "I_would_accept_a_person_who_is:_Divorced,_widowed,_has_children,_a_revert."
           ]
-        }<br/>
-        What are you looking for in your future spouse?
-        {
+        } <br/>
+        <span className="underline">What are you looking for in your future spouse?</span> {
           currentProfile[
             "Please_provide_details_about_the_qualities_and_characteristics_you_seek_in_your_potential_spouse."
           ]
         }<br/>
-        Any comments:{currentProfile["Any_further_comments"]}<br/>
-        Contact: {currentProfile["Who_to_contact?"]}<br/>
-        Contact Name: {currentProfile["Parent_or_Guardian's_Name_"]}<br/>
-        Contact Number: 0
-        {
+        <span className="underline">Any comments: </span>{currentProfile["Any_further_comments"]}<br/>
+        <span className="underline">Contact:</span> {currentProfile["Who_to_contact?"]}<br/>
+        <span className="underline">Contact Name:</span> {currentProfile["Parent_or_Guardian's_Name_"]}<br/>
+        <span className="underline">Contact Number:</span> 0{
           currentProfile[
             "Please_provide_the_contact_details_of_a_parent_or_suitable_senior_guardian_(unless_in_exceptional_circumstances)_to_be_added_to_the_WhatsApp_group._Only_female_relatives_will_be_added_to_the_group."
           ]

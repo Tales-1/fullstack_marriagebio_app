@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import FilterBtn from "./FilterBtn";
 import Profiles from "./Profiles";
+import Spinner from "./Spinner";
 import "./App.css";
 
 export interface Data {
@@ -38,7 +39,7 @@ function HomePage({profileData}:any) {
         <Profiles profiles={profileData} filter={type} />
       </div>
     </div> : <div className="fixed h-screen w-screen text-center grid place-items-center">
-      <span>Loading...</span></div>
+      <Spinner /></div>
   );
 }
 
