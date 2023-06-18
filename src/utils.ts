@@ -30,7 +30,7 @@ export default function copyBio(profile:Data) {
 
 *Education/Career Expectations:* ${profile["Education/_career_expectations:"]}
 
-*I would accept a person who is:* ${profile["Would_you_accept_a_person_who_is:"]}
+*I would accept a person who is:* ${profile["I_would_accept_a_person_who_is:_Divorced,_widowed,_has_children,_a_revert."]}
 
 *What are you looking for in your future spouse*?${profile["Please_provide_details_about_the_qualities_and_characteristics_you_seek_in_your_potential_spouse."]}
 
@@ -40,5 +40,4 @@ export default function copyBio(profile:Data) {
 *Contact Name:* ${profile["Parent_or_Guardian's_Name_"]}
 *Contact Number:* 0${profile["Please_provide_the_contact_details_of_a_parent_or_suitable_senior_guardian_(unless_in_exceptional_circumstances)_to_be_added_to_the_WhatsApp_group._Only_female_relatives_will_be_added_to_the_group."]}`;
     navigator.clipboard.writeText(text);
-    
   }

@@ -1,5 +1,6 @@
 import { Data } from "./App";
 import copyBio from "./utils";
+import { Link } from "react-router-dom";
 
 interface Props {
     profiles:Data[]
@@ -53,12 +54,16 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
       >
         {profile["Gender"]}
       </button>
+
+      <Link to={`/profilepage/${profile["Unique_Number"]}`}>View Profile</Link>
+
       {profile["Sent"].toLowerCase() == "yes" ? (
         <span className="green">Sent</span>
       ) : (
         <span className="red">Unsent</span>
       )}
     </div>
+
   );
 }
 
