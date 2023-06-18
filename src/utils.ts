@@ -32,7 +32,7 @@ export default function copyBio(profile:Data) {
 
 *I would accept a person who is:* ${profile["I_would_accept_a_person_who_is:_Divorced,_widowed,_has_children,_a_revert."]}
 
-*What are you looking for in your future spouse*?${profile["Please_provide_details_about_the_qualities_and_characteristics_you_seek_in_your_potential_spouse."]}
+*What are you looking for in your future spouse*? ${profile["Please_provide_details_about_the_qualities_and_characteristics_you_seek_in_your_potential_spouse."]}
 
 *Any comments*:${profile["Any_further_comments"]}
 
