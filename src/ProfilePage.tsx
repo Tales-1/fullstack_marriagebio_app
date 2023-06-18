@@ -3,9 +3,13 @@ import { useParams, Link } from "react-router-dom";
 const ProfilePage = ({ profileData }: any) => {
   let { profileId } = useParams();
   const currentProfile = profileData.find(
-    (e: any) => e["Unique_Number"] === profileId
+    (profile: any) => profile["Unique_Number"] === profileId
   );
 
+  
+  if (!currentProfile) {
+    return <div>Profile not found.</div>;
+  }
   return (
     <div>
       <Link to="/">Back to Profiles</Link>

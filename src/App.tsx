@@ -30,6 +30,7 @@ function App() {
       .catch((err) => console.error);
   }
 
+  console.log(data)
   useEffect(() => {
     if (!data?.length) {
       fetchData();
