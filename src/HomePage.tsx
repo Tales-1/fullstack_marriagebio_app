@@ -28,11 +28,11 @@ function HomePage({profileData}:any) {
         Marriage profile Database
       </h1>
       <div className="m-auto flex gap-6 lg:flex-col h-full lg:justify-between row-start-2 lg:row-start-3 lg:row-span-3 col-start-1 col-span-3 lg:col-span-1 w-full lg:w-2/3 lg:border-r-2 lg:pr-6">
-        <FilterBtn active={type} name={"All"} setFilter={(e:string) => setSearchParams(e)} />
-        <FilterBtn active={type} name={"Male"} setFilter={(e:string) => setSearchParams(e)} />
-        <FilterBtn active={type} name={"Female"} setFilter={(e:string) => setSearchParams(e)} />
-        <FilterBtn active={type} name={"Sent"} setFilter={(e:string) => setSearchParams(e)} />
-        <FilterBtn active={type} name={"Unsent"} setFilter={(e:string) => setSearchParams(e)} />
+        <FilterBtn active={type} name={"All"} setFilter={(a:string) => setSearchParams(a)} />
+        <FilterBtn active={type} name={"Male"} setFilter={(a:string) => setSearchParams(a)} />
+        <FilterBtn active={type} name={"Female"} setFilter={(a:string) => setSearchParams(a)} />
+        <FilterBtn active={type} name={"Sent"} setFilter={(a:string) => setSearchParams(a)} />
+        <FilterBtn active={type} name={"Unsent"} setFilter={(a:string) => setSearchParams(a)} />
       </div>
       <div className="flex flex-wrap gap-6 row-start-3 row-span-3 justify-center lg:justify-start col-start-1 lg:col-start-2 col-span-full w-full items-start">
         <Profiles profiles={profileData} filter={type} />

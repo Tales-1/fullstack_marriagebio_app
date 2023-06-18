@@ -3,12 +3,12 @@ import { FilterOptions } from "./App";
 interface Props {
   name: string;
   active: string | null;
-  setFilter: (e: string) => void
+  setFilter: (c: string) => void
 }
 
 const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
-  function filterProfiles(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    const { id } = e.target as HTMLButtonElement;
+  function filterProfiles(b: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    const { id } = b.target as HTMLButtonElement;
     switch (id) {
       case "All":
         setFilter("");
@@ -33,7 +33,7 @@ const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
       className={`p-2 border-[1px] text-xs lg:text-lg border-black dark:border-white ${
         active === name ? "bg-black text-white dark:bg-white dark:text-black" : "bg-inherit"
       } self-center w-full`}
-      onClick={(e) => filterProfiles(e)}
+      onClick={(d) => filterProfiles(d)}
       id={name}
     >
       {name}
