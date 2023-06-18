@@ -21,9 +21,8 @@ function HomePage({profileData}:any) {
   const [searchParams, setSearchParams] = useSearchParams()
   let type = searchParams.get("type")
  
-
   return (
-    profileData.length > 0 ?
+    profileData !== undefined ?
       <div className="App h-screen w-screen grid grid-rows-6 grid-cols-3 lg:grid-cols-6">
       <h1 className="row-start-1 row-span-2 col-start-1 col-span-full m-auto lg:text-5xl">
         Marriage profile Database

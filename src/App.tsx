@@ -30,9 +30,10 @@ function App() {
       .catch((err) => console.error);
   }
 
-  console.log("changed")
+  
   useEffect(() => {
     if (!data?.length) {
+      console.log(data)
       fetchData();
   }
   }, []);
