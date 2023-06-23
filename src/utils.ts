@@ -10,6 +10,7 @@ export default function copyBio(profile:Data) {
 *Height:* ${profile["Height"]}
 *Status:* ${profile["Status:_"]}
 *Ethnicity:* ${profile["Ethnicity:_"]}
+*Nationality:* ${profile["Nationality"]}
 *Location:* ${profile["Location:_"]}
 *Education:* ${profile["Education:"]}
 *Employment:* ${profile["Employment:"]}
@@ -18,7 +19,7 @@ export default function copyBio(profile:Data) {
 *Family/Siblings:* ${profile["Family/_Siblings"]}
 
 *Languages Spoken:* ${profile["Languages_spoken:_"]}
-*I celebrate:* ${profile["Do_you_celebrate_any_of_the_following?"]}
+*I celebrate:* ${profile["Do_you_celebrate_any_of_the_following:_Milad,_Khatam,_Bursi."]}
 *Do you have a beard?* ${profile["Do_you_have_a_beard?_(Male)"]}
 *Do you wear a hijab?* ${profile["Do_you_wear_any_of_the_following?"]}
 
@@ -30,7 +31,7 @@ export default function copyBio(profile:Data) {
 
 *Education/Career Expectations:* ${profile["Education/_career_expectations:"]}
 
-*I would accept a person who is:* ${profile["I_would_accept_a_person_who_is:_Divorced,_widowed,_has_children,_a_revert."]}
+*I would accept a person who is (Divorced, widowed, has children, a revert):* ${profile["I_would_accept_a_person_who_is:_Divorced,_widowed,_has_children,_a_revert."]}
 
 *What are you looking for in your future spouse*? ${profile["Please_provide_details_about_the_qualities_and_characteristics_you_seek_in_your_potential_spouse."]}
 
