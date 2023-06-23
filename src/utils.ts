@@ -19,7 +19,7 @@ export default function copyBio(profile:Data) {
 *Family/Siblings:* ${profile["Family/_Siblings"]}
 
 *Languages Spoken:* ${profile["Languages_spoken:_"]}
-*I celebrate (Milad, Khatam, Bursi):* ${profile["Do_you_celebrate_any_of_the_following:_Milad,_Khatam,_Bursi."]}
+*Do you celebrate (Milad, Khatam, Bursi)?:* ${profile["Do_you_celebrate_any_of_the_following:_Milad,_Khatam,_Bursi."]}
 *Do you have a beard?* ${profile["Do_you_have_a_beard?_(Male)"]}
 *Do you wear a hijab?* ${profile["Do_you_wear_any_of_the_following?"]}
 
