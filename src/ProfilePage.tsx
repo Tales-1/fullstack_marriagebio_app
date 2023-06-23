@@ -22,13 +22,14 @@ const ProfilePage = ({ profileData }: any) => {
         <span className="underline">Height:</span> {currentProfile["Height"]}<br/>
         <span className="underline">Status:</span> {currentProfile["Status:_"]}<br/>
         <span className="underline">Ethnicity:</span> {currentProfile["Ethnicity:_"]}<br/>
+        <span className="underline">Nationality:</span> {currentProfile["Nationality"]}<br/>
         <span className="underline">Location:</span> {currentProfile["Location:_"]}<br/>
         <span className="underline">Education:</span> {currentProfile["Education:"]}<br/>
         <span className="underline">Employment:</span> {currentProfile["Employment:"]}<br/>
         <span className="underline">Willing to Relocate?</span> {currentProfile["Willing_to_relocate:_"]}<br/>
         <span className="underline">Family/Siblings:</span> {currentProfile["Family/_Siblings"]}<br/>
         <span className="underline">Languages Spoken:</span>  {currentProfile["Languages_spoken:_"]}<br/>
-        <span className="underline">I celebrate:</span> {currentProfile["Do_you_celebrate_any_of_the_following?"]}<br/>
+        <span className="underline">I celebrate:</span> {currentProfile["Do_you_celebrate_any_of_the_following:_Milad,_Khatam,_Bursi."]}<br/>
         <span className="underline">Do you have a beard?</span> {currentProfile["Do_you_have_a_beard?_(Male)"]}<br/>
         <span className="underline">Do you wear a hijab?</span> {currentProfile["Do_you_wear_any_of_the_following?"]}<br/>
         <span className="underline">About myself:</span>  {
