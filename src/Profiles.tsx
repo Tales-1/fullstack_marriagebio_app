@@ -17,7 +17,7 @@ const Profiles: React.FC<Props> = ({profiles, filter}) => {
   let filteredProfiles = profiles.filter((profile) => {
     if(!filter) return profile
     if(filter === "Sent") return profile["Sent"].toLowerCase()  === "yes"
-    if(filter === "Unsent") return profile["Sent"].toLowerCase() === "no"
+    if(filter === "Unsent") return profile["Sent"].toLowerCase() !== "yes"
     return filter === profile["Gender"]
   })
   
@@ -55,7 +55,7 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
         {profile["Gender"]}
       </button>
 
-      <Link to={`/profilepage/${profile["Unique_Number"]}`} className="underline hover:opacity-70 text-xs xl:text-[0.82rem]">View Profile</Link>
+      <Link to={`/profilepage/${profile["Unique Number"]}`} className="underline hover:opacity-70 text-xs xl:text-[0.82rem]">View Profile</Link>
 
       {profile["Sent"].toLowerCase() == "yes" ? (
         <span className="green text-sm">Sent</span>
