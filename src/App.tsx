@@ -22,7 +22,7 @@ function App() {
   const [data, setData] = useState<Data>()
 
   function fetchData() {
-    fetch("https://testsheets-agcpprbymq-ew.a.run.app/profiles")
+    fetch("https://marriage-server-agcpprbymq-ew.a.run.app/profiles")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
