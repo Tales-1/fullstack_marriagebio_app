@@ -25,12 +25,11 @@ function App() {
     fetch("https://marriage-server-agcpprbymq-ew.a.run.app/profiles")
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setData(data.slice(1));
       })
       .catch((err) => console.error);
   }
 
-  
   useEffect(() => {
     if (!data?.length) {
       console.log(data)

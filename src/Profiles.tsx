@@ -16,9 +16,9 @@ interface ProfileProps {
 const Profiles: React.FC<Props> = ({profiles, filter}) => {
   let filteredProfiles = profiles.filter((profile) => {
     if(!filter) return profile
-    if(filter === "Sent") return profile["Sent"].toLowerCase()  === "yes"
-    if(filter === "Unsent") return profile["Sent"].toLowerCase() !== "yes"
-    return filter === profile["Gender"]
+    if(filter === "Sent") return profile[30].toLowerCase()  === "yes"
+    if(filter === "Unsent") return profile[30].toLowerCase() !== "yes"
+    return filter === profile[3]
   })
   
     return (
@@ -37,11 +37,11 @@ const Profiles: React.FC<Props> = ({profiles, filter}) => {
   };
 
 
-const Profile:React.FC<ProfileProps> = ({profile, index}) => {
+export const Profile:React.FC<ProfileProps> = ({profile, index}) => {
 
   return (
     <div className="flex flex-col gap-3 text-center" key={index}>
-      <span>{profile["Unique_Number"]}</span>
+      <span>{profile[1]}</span>
       <button
         className="p-2 border-[1px] border-black shadow-md dark:border-white"
         onClick={() => {
@@ -52,18 +52,17 @@ const Profile:React.FC<ProfileProps> = ({profile, index}) => {
           ;
         }}
       >
-        {profile["Gender"]}
+        {profile[3]}
       </button>
 
-      <Link to={`/profilepage/${profile["Unique Number"]}`} className="underline hover:opacity-70 text-xs xl:text-[0.82rem]">View Profile</Link>
+      <Link to={`/profilepage/${profile[1]}`} className="underline hover:opacity-70 text-xs xl:text-[0.82rem]">View Profile</Link>
 
-      {profile["Sent"].toLowerCase() == "yes" ? (
+      {profile[30].toLowerCase() == "yes" ? (
         <span className="green text-sm">Sent</span>
       ) : (
         <span className="red text-sm">Unsent</span>
       )}
     </div>
-
   );
 }
 

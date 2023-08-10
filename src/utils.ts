@@ -4,41 +4,41 @@ export default function copyBio(profile:Data) {
     let text = `
 *Marriage Profile Bio*
 
-*${profile["Unique Number"]}*
-*Gender:* ${profile["Gender"]}
-*Age:* ${profile["Age"]}
-*Height:* ${profile["Height"]}
-*Status:* ${profile["Status: "]}
-*Ethnicity:* ${profile["Ethnicity: "]}
-*Nationality:* ${profile["Nationality"]}
-*Location:* ${profile["Location: "]}
-*Education:* ${profile["Education:"]}
-*Employment:* ${profile["Employment:"]}
+*${profile[1]}*
+*Gender:* ${profile[3]}
+*Age:* ${profile[4]}
+*Height:* ${profile[5]}
+*Status:* ${profile[6]}
+*Ethnicity:* ${profile[7]}
+*Nationality:* ${profile[34]}
+*Location:* ${profile[8]}
+*Education:* ${profile[9]}
+*Employment:* ${profile[10]}
 
-*Willing to Relocate?* ${profile["Willing to relocate: "]}
-*Family/Siblings:* ${profile["Family/ Siblings"]}
+*Willing to Relocate?* ${profile[11]}
+*Family/Siblings:* ${profile[12]}
 
-*Languages Spoken:* ${profile["Languages spoken: "]}
-*Do you celebrate (Milad, Khatam, Bursi)?:* ${profile["Do you celebrate any of the following: Milad, Khatam, Bursi."]}
-*Do you have a beard?* ${profile["Do you have a beard? (Male)"]}
-*Do you wear a hijab?* ${profile["Do you wear any of the following?"]}
+*Languages Spoken:* ${profile[13]}
+*Do you celebrate (Milad, Khatam, Bursi)?:* ${profile[14]}
+*Do you have a beard?* ${profile[29]}
+*Do you wear a hijab?* ${profile[15]}
 
-*About myself:* ${profile["About Me: Please provide a description of yourself, including your personal qualities, faith, personality, interests, and background?"]}
+*About myself:* ${profile[16]}
 
-*Age Preferred:* ${profile["Age range:"]}
-*Preferred Ethnicity:* ${profile["Preferred Ethnicity"]}
-*Deen Expectations:* ${profile["Deen expectations:"]}
+*Age Preferred:* ${profile[17]}
+*Preferred Ethnicity:* ${profile[18]}
+*Deen Expectations:* ${profile[19]}
 
-*Education/Career Expectations:* ${profile["Education/ career expectations:"]}
+*Education/Career Expectations:* ${profile[20]}
 
-*I would accept a person who is (Divorced, widowed, has children, a revert):* ${profile["I would accept a person who is: Divorced, widowed, has children, a revert."]}
+*I would accept a person who is (Divorced, widowed, has children, a revert):* ${profile[21]}
 
-*What are you looking for in your future spouse*? ${profile["Please provide details about the qualities and characteristics you seek in your potential spouse."]}
+*What are you looking for in your future spouse*? ${profile[22]}
 
-*Any comments*:${profile["Any further comments"]}
+*Any comments*:${profile[23]}
 
-*Contact:* ${profile["Who to contact?"]}
-*Contact Name:* ${profile["Parent or Guardian's Name "]}
-*Contact Number:* 0${profile["Please provide the contact details of a parent or suitable senior guardian (unless in exceptional circumstances) to be added to the WhatsApp group. Only female relatives will be added to the group."]}`;
+*Contact:* ${profile[24]}
+*Contact Name:* ${profile[25]}
+*Contact Number:* 0${profile[26]}`;
     navigator.clipboard.writeText(text);
   }
