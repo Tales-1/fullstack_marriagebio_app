@@ -9,20 +9,19 @@ export interface Data {
 }
 
 export enum FilterOptions { 
-  NONE = "None",
+  ALL = "All",
   MALE = "Male",
   FEMALE = "Female",
   SENT = "Sent",
   UNSENT = "Unsent"
 }
 
-
 function App() {
 
   const [data, setData] = useState<Data>()
 
   function fetchData() {
-    fetch("http://127.0.0.1:8080/profiles")
+    fetch("https://marriage-server-agcpprbymq-ew.a.run.app/profiles")
       .then((res) => res.json())
       .then((data) => {
         setData(data.slice(1));

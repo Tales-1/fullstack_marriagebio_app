@@ -11,7 +11,7 @@ const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
     const { id } = b.target as HTMLButtonElement;
     switch (id) {
       case "All":
-        setFilter("");
+        setFilter(`type=${FilterOptions.ALL}`);
         break;
       case "Male":
         setFilter(`type=${FilterOptions.MALE}`);
@@ -26,7 +26,6 @@ const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
         setFilter(`type=${FilterOptions.UNSENT}`);
     }
   }
- 
 
   return (
     <button

@@ -34,22 +34,20 @@ button {
   padding-inline: 8px;
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:700px) {
   .pagination-container{
     position: absolute;
     bottom: 0;
-    width: 56%;
+    width: fit-content;
     margin: auto;
   }
 
   .layout{
     display: grid;
-    grid-template-rows: 120px 50px 1fr 50px;
-    gap: .5em;
+    grid-template-rows: 120px auto auto auto;
+    gap: 1em;
   }
-  
 } 
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -113,7 +111,7 @@ button {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow:hidden; 
   border-radius:8px;
-  min-width: 200px;
+  width: 200px;
 }
 
 .main-section{
@@ -163,4 +161,16 @@ strong{
   font-weight: bolder;
 }
 
+.details-overlay{
+  position:absolute;
+  inset:0;
+  background:#242424;
+  opacity:0.9;
+  z-index:30;
+  color:white;
+  text-align:center;
+}
 
+.text-container{
+  margin-top:2.3em;
+}
