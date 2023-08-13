@@ -24,7 +24,7 @@ function HomePage({ profileData }: any) {
   const filter = searchParams.get("type");
 
   const filteredProfiles = profileData?.filter((profile:any) => {
-    if (filter === "All") return profile;
+    if (filter === "All" || !filter) return profile;
     if (filter === "Sent") return profile[30].toLowerCase() === "yes";
     if (filter === "Unsent") return profile[30].toLowerCase() !== "yes";
     return filter === profile[3];
@@ -87,14 +87,14 @@ function PaginatedItems({ itemsPerPage, profiles, filter}: any) {
 
   useEffect(() => {
     setItemOffset(0)
-    let test = Array.from(document.getElementsByClassName("pagination-container")[0].children);
+    let test = Array.from(document.getElementsByClassName("pagination-container")[0]?.children);
     test.forEach(test => test.classList.remove("selected"))
     test[1].classList.add("selected")
   }, [filter])
 
   useEffect(() => {
     if(itemOffset !== 0){
-      let test = Array.from(document.getElementsByClassName("pagination-container")[0].children);
+      let test = Array.from(document.getElementsByClassName("pagination-container")[0]?.children);
       test[1].classList.remove("selected")
     }
   }, [itemOffset])
