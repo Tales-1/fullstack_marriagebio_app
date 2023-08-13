@@ -10,47 +10,68 @@ export interface Data {
   [key: string]: string;
 }
 
-export enum FilterOptions { 
+export enum FilterOptions {
   NONE = "None",
   MALE = "Male",
   FEMALE = "Female",
   SENT = "Sent",
-  UNSENT = "Unsent"
+  UNSENT = "Unsent",
 }
 
-function HomePage({profileData}:any) {
-  
-  const [searchParams, setSearchParams] = useSearchParams()
-  let type = searchParams.get("type")
- 
+function HomePage({ profileData }: any) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  let type = searchParams.get("type");
+
   return (
-    
-      <div className="App h-screen w-screen grid grid-rows-6 grid-cols-3 lg:grid-cols-6">
-      <h1 className="row-start-1 row-span-2 col-start-1 col-span-full m-auto lg:text-5xl">
+    <div className="layout">
+      <h1 className="m-auto lg:text-5xl">
         Marriage profile Database
       </h1>
 
-      <div className="m-auto flex gap-6 lg:flex-col h-full lg:justify-between row-start-2 lg:row-start-3 lg:row-span-3 col-start-1 col-span-3 lg:col-span-1 w-full lg:w-2/3 lg:border-r-2 lg:pr-6">
-          <FilterBtn active={type} name="All" setFilter={(a:string) => setSearchParams(a)} />
-          <FilterBtn active={type} name="Male" setFilter={(a:string) => setSearchParams(a)} />
-          <FilterBtn active={type} name="Female" setFilter={(a:string) => setSearchParams(a)} />
-          <FilterBtn active={type} name="Sent" setFilter={(a:string) => setSearchParams(a)} />
-          <FilterBtn active={type} name="Unsent" setFilter={(a:string) => setSearchParams(a)} />
-        </div>
-      {profileData !== undefined ? 
-      <>
-        <div className="grid grid-rows-3 grid-cols-6 gap-6 row-start-3 row-span-3 justify-center lg:justify-start col-start-1 lg:col-start-2 col-end-6">
-          <PaginatedItems itemsPerPage={18} items={profileData} filter={type}/>
-        </div>
-      </> :  
+      <div className="flex w-full lg:w-3/5 m-auto p-3 gap-4 sticky top-0 bg-[#242424] border border-[#fbf6eb] rounded-lg z-20">
+        <FilterBtn
+          active={type}
+          name="All"
+          setFilter={(a: string) => setSearchParams(a)}
+        />
+        <FilterBtn
+          active={type}
+          name="Male"
+          setFilter={(a: string) => setSearchParams(a)}
+        />
+        <FilterBtn
+          active={type}
+          name="Female"
+          setFilter={(a: string) => setSearchParams(a)}
+        />
+        <FilterBtn
+          active={type}
+          name="Sent"
+          setFilter={(a: string) => setSearchParams(a)}
+        />
+        <FilterBtn
+          active={type}
+          name="Unsent"
+          setFilter={(a: string) => setSearchParams(a)}
+        />
+      </div>
+      
+      {profileData !== undefined ? (
+            <PaginatedItems
+              itemsPerPage={8}
+              items={profileData}
+              filter={type}
+            />
+      ) : (
         <div className="fixed h-screen w-screen text-center grid place-items-center">
           <Spinner />
-        </div>}
-    </div>  
+        </div>
+      )}
+    </div>
   );
 }
 
-function PaginatedItems({ itemsPerPage, items, filter }:any) {
+function PaginatedItems({ itemsPerPage, items, filter }: any) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
@@ -72,11 +93,11 @@ function PaginatedItems({ itemsPerPage, items, filter }:any) {
     <>
       <Profiles profiles={currentItems} filter={filter} />
       <ReactPaginate
-        containerClassName="container"
+        containerClassName="pagination-container"
         breakLabel="..."
         nextLabel=">"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={18}
+        pageRangeDisplayed={14}
         pageCount={pageCount}
         previousLabel="<"
         renderOnZeroPageCount={null}

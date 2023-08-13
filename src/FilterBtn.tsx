@@ -30,8 +30,8 @@ const FilterBtn: React.FC<Props> = ({ setFilter, name, active }) => {
 
   return (
     <button
-      className={`p-2 border-[1px] text-xs lg:text-lg border-black dark:border-white ${
-        active === name ? "bg-black text-white dark:bg-white dark:text-black" : "bg-inherit"
+      className={`p-2 border-[1px] text-xs lg:text-base border-black dark:border-white ${
+        active === name ? "dark:bg-[#242424] dark:text-[#fbf6eb]" : "bg-[#fbf6eb] text-black"
       } self-center w-full`}
       onClick={(d) => filterProfiles(d)}
       id={name}

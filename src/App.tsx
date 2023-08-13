@@ -22,7 +22,7 @@ function App() {
   const [data, setData] = useState<Data>()
 
   function fetchData() {
-    fetch("https://marriage-server-agcpprbymq-ew.a.run.app/profiles")
+    fetch("http://127.0.0.1:8080/profiles")
       .then((res) => res.json())
       .then((data) => {
         setData(data.slice(1));
@@ -42,7 +42,7 @@ function App() {
         <Route path = "/" element = {<HomePage profileData = {data} />} />
         <Route path = "/profilepage/:profileId" element = {<ProfilePage profileData = {data} />} />
     </Routes>
-  );
+  )
 }
 
 export default App;
