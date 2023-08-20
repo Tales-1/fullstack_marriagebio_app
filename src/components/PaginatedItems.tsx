@@ -14,6 +14,7 @@ const PaginatedItems:React.FC<PaginatedItemsProps> = ({ itemsPerPage, profiles, 
     const endOffset = itemOffset + itemsPerPage;
     const pageCount = Math.ceil(profiles.length / itemsPerPage);
   
+    // Set the page to 1 when a new filter is clicked
     useEffect(() => {
       setItemOffset(0)
       let test = Array.from(document.getElementsByClassName("pagination-container")[0]?.children);
@@ -21,6 +22,7 @@ const PaginatedItems:React.FC<PaginatedItemsProps> = ({ itemsPerPage, profiles, 
       test[1].classList.add("selected")
     }, [filter])
   
+    // Ensure only one button has the active class at any given time
     useEffect(() => {
       if(itemOffset !== 0){
         let test = Array.from(document.getElementsByClassName("pagination-container")[0]?.children);
