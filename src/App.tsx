@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom"
 import { useState, useEffect } from "react";
 import "./App.css";
-import HomePage from "./HomePage";
-import ProfilePage from "./ProfilePage";
+import HomePage from "./Pages/HomePage";
+import ProfilePage from "./Pages/ProfilePage";
 
 export interface Data {
   [key: string]: string;

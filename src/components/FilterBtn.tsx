@@ -1,4 +1,4 @@
-import { FilterOptions } from "./App";
+import { FilterOptions } from "../App";
 
 interface Props {
   name: string;

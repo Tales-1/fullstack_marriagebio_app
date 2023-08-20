@@ -1,11 +1,8 @@
 import { useSearchParams } from "react-router-dom";
-import FilterBtn from "./FilterBtn";
-import Profiles from "./Profiles";
-import Spinner from "./Spinner";
-import "./App.css";
-import { useState, useEffect} from "react";
-import ReactPaginate from "react-paginate";
-
+import FilterBtn from "../components/FilterBtn";
+import PaginatedItems from "../components/PaginatedItems";
+import Spinner from "../components/Spinner";
+import "../App.css";
 
 export interface Data {
   [key: string]: string;
@@ -79,47 +76,6 @@ function HomePage({ profileData }: any) {
   );
 }
 
-function PaginatedItems({ itemsPerPage, profiles, filter}: any) {
-  const [itemOffset, setItemOffset] = useState(0);
 
-  const endOffset = itemOffset + itemsPerPage;
-  const pageCount = Math.ceil(profiles.length / itemsPerPage);
-
-  useEffect(() => {
-    setItemOffset(0)
-    let test = Array.from(document.getElementsByClassName("pagination-container")[0]?.children);
-    test.forEach(test => test.classList.remove("selected"))
-    test[1].classList.add("selected")
-  }, [filter])
-
-  useEffect(() => {
-    if(itemOffset !== 0){
-      let test = Array.from(document.getElementsByClassName("pagination-container")[0]?.children);
-      test[1].classList.remove("selected")
-    }
-  }, [itemOffset])
-
-  const handlePageClick = (event: any) => {
-    const newOffset = (event.selected * itemsPerPage) % profiles.length;
-    setItemOffset(newOffset);
-  };
-
-  const currentItems = profiles.slice(itemOffset, endOffset);
-  return (
-    <>
-      <Profiles profiles={currentItems} />
-      <ReactPaginate
-        containerClassName="pagination-container"
-        breakLabel="..."
-        nextLabel=">"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={10}
-        pageCount={pageCount}
-        previousLabel="<"
-        renderOnZeroPageCount={null}
-      />
-    </>
-  );
-}
 
 export default HomePage;

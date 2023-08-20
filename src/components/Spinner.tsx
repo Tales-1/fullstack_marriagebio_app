@@ -1,4 +1,4 @@
-import { Data } from "./App";
+import { Data } from "../App";
 
 export default function Spinner() {
   return (

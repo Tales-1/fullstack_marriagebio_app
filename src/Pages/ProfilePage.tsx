@@ -6,7 +6,6 @@ const ProfilePage = ({ profileData }: any) => {
     (profile: any) => profile["Unique Number"] === profileId
   );
 
-  
   if (!currentProfile) {
     return <div>Profile not found.</div>;
   }

@@ -1,8 +1,8 @@
-import { Data } from "./App";
+import { Data } from "../App";
 import copyBio from "./utils";
 import { Link } from "react-router-dom";
-import man from "./assets/muslim.png";
-import woman from "./assets/hijab.png";
+import man from "../assets/muslim.png";
+import woman from "../assets/hijab.png";
 import { useState } from "react";
 import ViewProfileModal from "./ViewDetails";
 import ViewDetails from "./ViewDetails";
