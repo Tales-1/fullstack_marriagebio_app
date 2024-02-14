@@ -18,11 +18,11 @@ export default function ViewDetails({isVisible, toggleDetails, profile}: Props) 
     <div className="details-overlay" style={styles}>
     <div className="text-container mx-4 text-sm">
       <p>{profile[3]}</p>
-      <p>{profile[4]} years old</p>
-      <p>H: {profile[5]}</p>
-      <p>Ethnicity: {profile[7]}</p>
-      <p>Nationality: {profile[34]}</p>
-      <p>Location: {profile[8]}</p>
+      <p>{profile["Age"]} years old</p>
+      <p>H: {profile["Height"]}</p>
+      <p>Ethnicity: {profile["Ethnicity: "]}</p>
+      <p>Nationality: {profile["Nationality"]}</p>
+      <p>Location: {profile["Location: "]}</p>
 
       <button onClick={toggleDetails} className="mt-4 text-3xl">&#10006;</button>
     </div>

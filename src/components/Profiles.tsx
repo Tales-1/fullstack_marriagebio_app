@@ -47,13 +47,13 @@ export const Profile: React.FC<ProfileProps> = ({ profile, index }) => {
         />
       
       <div className="main-section">
-        <strong>{profile[1]}</strong>
+        <strong>{profile["Unique Number"]}</strong>
         <div className="image-container">
           <div className="image">
-            <img src={profile[3] === "Male" ? man : woman} alt="" />
+            <img src={profile["Gender"] === "Male" ? man : woman} alt="" />
           </div>
           <span className="gender">{profile[3]}</span>
-          {profile[30].toLowerCase() == "yes" ? (
+          {profile["Sent"].toLowerCase() == "yes" ? (
             <small className="green">Sent</small>
           ) : (
             <small className="red">Unsent</small>

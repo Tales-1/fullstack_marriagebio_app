@@ -1,47 +1,40 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 import HomePage from "./Pages/HomePage";
 import ProfilePage from "./Pages/ProfilePage";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
+import axios from "axios";
 
 export interface Data {
   [key: string]: string;
 }
 
-export enum FilterOptions { 
+export enum FilterOptions {
   ALL = "All",
   MALE = "Male",
   FEMALE = "Female",
   SENT = "Sent",
-  UNSENT = "Unsent"
+  UNSENT = "Unsent",
+}
+
+export async function fetchData() {
+  const promise = axios.get("https://flask-server-agcpprbymq-ew.a.run.app/profiles")
+  // const promise = axios.get("http://127.0.0.1:8080/profiles")
+  const data = (await promise).data.slice(1);
+  return data
 }
 
 function App() {
-
-  const [data, setData] = useState<Data>()
-
-  function fetchData() {
-    fetch("https://marriage-server-agcpprbymq-ew.a.run.app/profiles")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data.slice(1));
-      })
-      .catch((err) => console.error);
-  }
-
-  useEffect(() => {
-    if (!data?.length) {
-      console.log(data)
-      fetchData();
-  }
-  }, []);
-
-  return (    
+  return (
     <Routes>
-        <Route path = "/" element = {<HomePage profileData = {data} />} />
-        <Route path = "/profilepage/:profileId" element = {<ProfilePage profileData = {data} />} />
+      <Route path="/" element={<HomePage />} />
     </Routes>
-  )
+  );
 }
 
 export default App;

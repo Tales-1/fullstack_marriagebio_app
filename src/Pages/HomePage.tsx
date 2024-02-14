@@ -3,6 +3,9 @@ import FilterBtn from "../components/FilterBtn";
 import PaginatedItems from "../components/PaginatedItems";
 import Spinner from "../components/Spinner";
 import "../App.css";
+import { useQuery } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { fetchData } from "../App";
 
 export interface Data {
   [key: string]: string;
@@ -16,16 +19,37 @@ export enum FilterOptions {
   UNSENT = "Unsent",
 }
 
-function HomePage({ profileData }: any) {
+function HomePage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const filter = searchParams.get("type");
 
-  const filteredProfiles = profileData?.filter((profile:any) => {
-    if (filter === "All" || !filter) return profile;
-    if (filter === "Sent") return profile[30].toLowerCase() === "yes";
-    if (filter === "Unsent") return profile[30].toLowerCase() !== "yes";
-    return filter === profile[3];
-  });
+  const { isLoading, error, data, isFetching } = useQuery(
+    ["fetchData"],
+    fetchData,
+    {
+      staleTime: 10 * (60 * 1000), // 10 mins 
+      cacheTime: 15 * (60 * 1000), // 15 mins 
+    }
+  );
+
+  if (isLoading) return <Spinner />;
+
+  if (error)
+    return (
+      <p>
+        An Error has occured while retrieving data. Try refreshing the page. If
+        that doesn't work, contact your adminstrator.
+      </p>
+    );
+
+  const filteredProfiles = (data as any).filter(
+    (profile: any) => {
+      if (filter === "All" || !filter) return profile;
+      if (filter === "Sent") return profile["Sent"].toLowerCase() === "yes";
+      if (filter === "Unsent") return profile["Sent"].toLowerCase() !== "yes";
+      return filter === profile["Gender"];
+    }
+  );
 
   return (
     <div className="layout">
@@ -60,22 +84,18 @@ function HomePage({ profileData }: any) {
           setFilter={(a: string) => setSearchParams(a)}
         />
       </div>
-      
-      {filteredProfiles !== undefined ? (
-            <PaginatedItems
-              itemsPerPage={10}
-              profiles={filteredProfiles}
-              filter={filter}
-            />
-      ) : (
-        <div className="fixed h-screen w-screen text-center grid place-items-center">
-          <Spinner />
-        </div>
-      )}
+
+      <div>{isFetching ? 'Updating...' : ''}</div>
+
+      <PaginatedItems
+        itemsPerPage={10}
+        profiles={filteredProfiles}
+        filter={filter}
+      />
+      <ReactQueryDevtools initialIsOpen />
     </div>
+    
   );
 }
-
-
 
 export default HomePage;
