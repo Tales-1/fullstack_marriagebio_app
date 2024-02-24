@@ -8,7 +8,7 @@ export default function copyBio(profile:Data) {
 *Gender:* ${profile["Gender"]}
 *Age:* ${profile["Age"]}
 *Height:* ${profile["Height"]}
-*Status:* ${profile["Status"]}
+*Status:* ${profile["Status: "]}
 *Ethnicity:* ${profile["Ethnicity: "]}
 *Nationality:* ${profile["Nationality"]}
 *Location:* ${profile["Location: "]}
@@ -23,9 +23,9 @@ export default function copyBio(profile:Data) {
 *Do you have a beard?* ${profile["Do you have a beard? (Male)"]}
 *Do you wear a hijab?* ${profile["Do you wear any of the following?"]}
 
-*About myself:* ${profile[0]}
+*About myself:* ${profile["About Me: Please provide a description of yourself, including your personal qualities, faith, personality, interests, and background?"]}
 
-*Age Preferred:* ${profile["About Me: Please provide a description of yourself,  including your personal qualities, faith, personality, interests, and background?"]}
+*Age Preferred:* ${profile["Age range:"]}
 *Preferred Ethnicity:* ${profile["Preferred Ethnicity"]}
 *Deen Expectations:* ${profile["Deen expectations:"]}
 
