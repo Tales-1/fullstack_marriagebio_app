@@ -23,7 +23,7 @@ export enum FilterOptions {
 }
 
 export async function fetchData() {
-  const promise = axios.get("https://flask-server-agcpprbymq-ew.a.run.app/profiles")
+  const promise = axios.get("https://marriage-server-agcpprbymq-ew.a.run.app/profiles")
   // const promise = axios.get("http://127.0.0.1:8080/profiles")
   const data = (await promise).data.slice(1);
   return data
