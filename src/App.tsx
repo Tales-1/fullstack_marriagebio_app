@@ -1,14 +1,11 @@
-import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth"
+import { auth } from "../Authentication"
 import "./App.css";
 import HomePage from "./Pages/HomePage";
-import ProfilePage from "./Pages/ProfilePage";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import Login from "./Pages/Login";
+import Spinner from "./components/Spinner";
 
 export interface Data {
   [key: string]: string;
@@ -22,19 +19,31 @@ export enum FilterOptions {
   UNSENT = "Unsent",
 }
 
-export async function fetchData() {
-  const promise = axios.get("https://marriage-server-agcpprbymq-ew.a.run.app/profiles")
-  // const promise = axios.get("http://127.0.0.1:8080/profiles")
-  const data = (await promise).data.slice(1);
-  return data
-}
 
 function App() {
+  const [user, loading ] = useAuthState(auth)
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if (loading) {
+        // trigger loading screen
+        return
+    }
+    if (user) {
+        navigate("/")
+    }
+
+},[user,loading])
+  
+if(loading) return <Spinner />
+
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={user ? <HomePage /> : <Login />} />
     </Routes>
   );
 }
 
 export default App;
+
+
